@@ -112,7 +112,7 @@ public function indexAction()
     $image_bin = empty($raw_post["image_bin"])?null:$raw_post["image_bin"];
     if(empty($image_bin)){
         echo "error: image data could not be nil";
-        return Flase;
+        return False;
     }
 
 // meta        
@@ -134,6 +134,26 @@ public function indexAction()
         return False;
     }
 
+    $user_data_dir = path_join(U2_DATA_DIR,"user",$username);
+    if !is_dir($user_data_dir){
+        mkdir($user_data_dir);
+    }
+    $user_upload_limit = 100;
+    $user_upload_current = 0;
+    $user_upload_current_file = path_join($user_data_dir,"upload_current.txt");
+    if(file_exists($user_upload_current_file)){
+        $user_upload_current = (int)file_get_contents($user_upload_current);
+    }else{
+        file_put_contents($user_upload_current_file, "1");
+    }
+
+    if($user_upload_current >= $user_upload_limit){
+        echo "error: users of free plan can upload ".$user_upload_limit." images only. you can buy more quota.";
+        return False;
+    }
+
+
+    //
     $valid_userkey = $this->getAPIKey($username);
 
     if($valid_userkey != $userkey){
