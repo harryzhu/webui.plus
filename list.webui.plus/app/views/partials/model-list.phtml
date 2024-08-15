@@ -1,0 +1,41 @@
+<?php
+global $_G;
+$model_title = " ALL Models";
+if(!empty($controller_name) && $controller_name=="my"){
+	$arr_models = getModelList(array('username'=>$_G['me']['username']));
+	$model_title = " My Models";
+}else{
+	$arr_models = getModelList();
+}
+
+
+if(!empty($controller_name) && $controller_name=="my" && !empty($_G['me']['username'])){
+	$navmodel = '<li class="model-item"><a class="nav-tag" href="/my"> '.$model_title.'('.sizeof($arr_models).')</a></li>';
+}else{
+	$navmodel = '<li class="model-item"><a class="nav-tag" href="/"> '.$model_title.'('.sizeof($arr_models).')</a></li>';
+}
+
+foreach($arr_models as $md){
+	
+
+	if(!empty($controller_name) && $controller_name=="my" && !empty($_G['me']['username'])){
+		if($_G["current_model"] == $md){
+			$navmodel .= '<li class="model-item active"><a class="nav-tag" href="/my/?m='.$md.'&u='.$_G['me']['username'].'">'.$md.'</a></li>';
+		}else{
+			$navmodel .= '<li class="model-item"><a class="nav-tag" href="/my/?m='.$md.'&u='.$_G['me']['username'].'">'.$md.'</a></li>';
+		}
+	}else{
+		if($_G["current_model"] == $md){
+			$navmodel .= '<li class="model-item active"><a class="nav-tag" href="/?m='.$md.'">'.$md.'</a></li>';
+		}else{
+			$navmodel .= '<li class="model-item"><a class="nav-tag" href="/?m='.$md.'">'.$md.'</a></li>';
+		}
+	}
+
+
+}
+
+echo '<ul>'.$navmodel.'</ul>';
+
+//echo$_G["current_model"];
+?>

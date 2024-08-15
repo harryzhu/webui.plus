@@ -1,0 +1,27 @@
+<?php $this->partial("partials/header"); ?>
+<h2>Sign using this form</h2>
+
+<?php echo $this->tag->form(['action' => '/signup/register']); ?>
+
+<p>
+    <label for="name">Name</label>
+    <?php echo $this->tag->inputText('name'); ?>
+</p>
+
+<p>
+    <label for="name">Password</label>
+    <?php echo $this->tag->inputPassword('password'); ?>
+</p>
+
+<p>
+    <label for="name">E-Mail</label>
+    <?php echo $this->tag->inputText('email'); ?>
+</p>
+
+<p>
+    <?php echo $this->tag->inputSubmit('Sign Up', null, ['class' => 'btn btn-primary']); ?>
+</p>
+
+<?php echo $this->tag->close('form'); ?>
+
+<?php $this->partial("partials/footer"); ?>

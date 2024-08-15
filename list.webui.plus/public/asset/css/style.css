@@ -1,0 +1,157 @@
+html, body {
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border-radius: 10px;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  padding: 5px;
+  border-bottom: 1px solid #dcdcde;
+}
+
+li.active {
+  background-color: green;
+  color: #fff;
+}
+li.active a {
+  color: #fff;
+}
+
+.container {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-count: 4;
+  /* width: 100%;*/
+  /*column-width: 230px;*/
+  column-gap: 20px;
+  overflow: hidden;
+  /*background-color: #080B16;
+  color: #fefeff;*/
+  padding-left: 10px;
+}
+.image-list img {
+  width: 100%;
+  height: auto;
+}
+.image-list .image-box {
+  break-inside: avoid;
+  /*display: flex;
+  flex-direction: column;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #aaa;
+  height: auto;
+}
+.image-list .public-0 img {
+  opacity: 0.4;
+}
+.image-list .public-0 img:hover {
+  opacity: 1;
+}
+.image-list .member-1 img {
+  width: 236px;
+  border-right: 2px solid purple;
+  border-bottom: 2px solid purple;
+}
+.image-list .private-1 img {
+  width: 236px;
+  border-top: 2px solid orange;
+  border-left: 2px solid orange;
+}
+.image-list .adult-1 img {
+  filter: blur(40px);
+}
+
+ul.pagination {
+  margin-top: 20px;
+  align: center;
+  align: center;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul.pagination li.page-item a {
+  background-color: #080B16;
+  color: #fff;
+  font-weight: 700;
+}
+
+table td {
+  vertical-align: top;
+}
+
+img.big-image {
+  width: 640px;
+  filter: brightness(108%);
+}
+
+textarea.ta-big {
+  width: 987px;
+  height: 100px;
+  resize: none;
+}
+
+.col-model,
+.col-user {
+  background-color: #fff;
+  min-height: 100%;
+}
+
+.photos-detail .col-image {
+  border-radius: 10px 10px 0 0;
+}
+
+h3 {
+  color: #333;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+
+ul.model-gallery {
+  border: 0px solid #ccc;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  width: 100%;
+}
+ul.model-gallery img {
+  width: 96px;
+  height: 96px;
+}
+ul.model-gallery li {
+  font-size: 13px;
+  border: 1px solid #999;
+  display: inline-block;
+  width: 128px;
+  height: 158px;
+  overflow: hidden;
+  word-wrap: all;
+  word-break: break-all;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

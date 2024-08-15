@@ -1,0 +1,34 @@
+<div class="col-12 footer">
+
+<hr/>
+<?php
+echo "filter:";
+if(!empty($filter)){
+	print_r($filter);
+}
+echo '<hr/>';
+echo "options:";
+if(!empty($options)){
+	print_r($options);
+}
+echo '<hr/>';
+echo "_G:";
+global $_G;
+if(!empty($_G)){
+	print_r($_G);
+}
+echo '<hr/>';
+if(!empty($controller_name) && !empty($action_name)){
+	echo $controller_name . " : " .$action_name;
+
+}
+
+?>
+</div>
+
+<script type="text/javascript" src="/asset/js/bootstrap.bundle.min.js"></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV79C94"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->

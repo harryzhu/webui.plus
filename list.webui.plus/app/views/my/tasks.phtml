@@ -1,0 +1,14 @@
+<?php
+if(!empty($tasks)){
+	echo '<ul>';
+	foreach($tasks as $task){
+		echo '<li>'.$task['status'] . ' | ' . $task['prompt'].'</li>';
+
+	}
+
+	echo '</ul>';
+}
+
+
+
+	?>

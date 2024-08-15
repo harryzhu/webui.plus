@@ -1,0 +1,26 @@
+<?php
+global $_G;
+
+if(empty($_G['current_model'])){
+	$arr_users = getUserList();
+}else{
+	$arr_users = getUserList(array('model'=>$_G['current_model']));
+}
+
+
+
+$navuser = '<li class="user-item"><a class="nav-tag" href="/"> ALL Users('.sizeof($arr_users).')</a></li>';
+foreach($arr_users as $un){
+	if($_G["current_username"] == $un){
+		$navuser .= '<li class="user-item active"><a class="nav-tag" href="'.join_url("",$un).'">'.$un.'</a></li>';
+	}else{
+		$navuser .= '<li class="user-item"><a class="nav-tag" href="'.join_url("",$un).'">'.$un.'</a></li>';
+	}
+}
+
+echo '<ul>'.$navuser.'</ul>';
+//echo$_G["current_username"];
+//print_r($_G['current_model']);
+//print_r($arr_users);
+
+?>

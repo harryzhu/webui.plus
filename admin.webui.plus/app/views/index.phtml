@@ -1,0 +1,29 @@
+<?php $this->partial("partials/header"); ?>
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-model">
+				<?php //$this->partial("partials/model-list"); ?>
+			</div>
+
+			<div class="col-user">
+				<?php //$this->partial("partials/user-list"); ?>
+			</div>
+
+
+			<div class="col-image">
+				<?php echo $this->getContent(); ?>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+			<?php $this->partial("partials/footer"); ?>
+		</div>
+	</div>
+
+
+</body>
+</html>

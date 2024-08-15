@@ -1,0 +1,34 @@
+<?php
+//print_r($photo);
+
+foreach($photos as $photo){
+
+   // $photo_src_url = strtolower('https://r2.webui.plus/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
+$img_thumb_url = strtolower('https://r2.webui.plus/thumb/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.jpg');
+$img_src_url = strtolower('https://r2.webui.plus/image/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
+$details_url = strtolower('/photos/detail/'.$photo['_id']);
+
+    echo '<table><tr>';
+
+    echo '<td width=220>'.'<a href="'.$details_url.'" target="_blank"><image src="'.$img_thumb_url.'" /></a>'.'</td>';
+
+    echo '<td width=300><ul class="meta-list">';
+
+    echo '<li><a href="/admin/delete/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'">Delete</a></li>';
+     echo '<li><a href="/admin/publish/'.$photo['_id'].'">Make it Public!</a></li>';
+
+    echo '<li>Model:<span class="runparam" contenteditable="true">'.$photo->model."</span></li>";
+    echo '<li>Steps:<span class="runparam" contenteditable="true">'.$photo->steps."</span></li>";
+    echo '<li>Sampler:<span class="runparam" contenteditable="true">'.$photo->sampler."</span></li>";
+    echo '<li>Cfg_scale:<span class="runparam" contenteditable="true">'.$photo->cfg_scale."</span></li>";
+    echo '<li>Size:<span class="runparam" contenteditable="true">'.$photo->width.' x '.$photo->height."</span></li>";
+    echo '<li>Seed:<span class="runparam" contenteditable="true">'.$photo->seed."</span></li>";
+    echo '<li>Author:<span class="runparam" contenteditable="true">'.$photo->username."</span></li>";
+
+    echo '</ul></td>';
+    echo '<td>Prompt:<br/><span class="runparam runparam-large" contenteditable="true">'.$photo->prompt.'</span></td><td>Negative Prompt:<br/><span class="runparam runparam-large" contenteditable="true">'.$photo->negative_prompt.'</span></td>';
+
+    echo '</tr></table>';
+}
+
+?>

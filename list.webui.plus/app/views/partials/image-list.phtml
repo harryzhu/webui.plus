@@ -1,0 +1,18 @@
+<div class="image-list">
+	<?php
+	global $_G;
+	echo getPhotoList($photos);
+	$page_prev_next = nav_page($_G["current_model"],$_G["current_username"]);
+
+	?>
+</div>
+
+
+<div class="row">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="<?php echo $page_prev_next['prev'];?>"> << Prev</a></li>
+				<li class="page-item"><a class="page-link" href="<?php echo $page_prev_next['next'];?>">Next >> </a></li>
+			</ul>
+		</nav>
+	</div>

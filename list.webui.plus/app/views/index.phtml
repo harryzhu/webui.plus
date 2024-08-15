@@ -1,0 +1,40 @@
+<?php $this->partial("partials/header"); ?>
+
+<body class="<?php echo $body_class;?>">
+	<div class="container">
+		<div class="row">
+			
+			<?php $this->partial("partials/navbar"); ?>
+			
+		</div>
+
+
+		<div class="row gx-1">
+			<div class="col-xl-2">
+				<div class="col-model">
+					<?php $this->partial("partials/model-list"); ?>
+				</div>
+			</div>
+
+			<div class="col-xl-1">
+				<div class="col-user">
+					<?php $this->partial("partials/user-list"); ?>
+				</div>
+			</div>
+
+			<div class="col-xl-9">
+				<div class="col-image">
+					<?php echo $this->getContent(); ?>
+
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<?php $this->partial("partials/footer"); ?>
+		</div>
+	</div>
+</body>
+</html>

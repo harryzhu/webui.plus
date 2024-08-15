@@ -1,0 +1,57 @@
+<h2>Draw Your Picture, Show Your Imagination</h2>
+
+<?php echo $this->tag->form(["action"=>'/my/drawsave', 'method' => 'post','name'=>'taskform']); ?>
+
+<div class="input-group mb-3">
+	<span class="input-group-text">Models</span>
+	<!--<select class="form-select" aria-label="Models" name='frmmodel'>
+		<option selected>Select a model</option>
+		<option value="sd-v1-5">sd-v1-5</option>
+		<option value="chilloutmix_NiPrunedFp32Fix">chilloutmix_NiPrunedFp32Fix</option>
+		<option value="fruitFusion_ver1OFR2">fruitFusion_ver1OFR2</option>
+		<option value="gravyMixPhotorealism_v3clean">gravyMixPhotorealism_v3clean</option>
+		<option value="Guofeng3_v33">Guofeng3_v33</option>
+		<option value="level4_v50BakedVAEFp16">level4_v50BakedVAEFp16</option>
+		<option value="pixarStyleModel_v10">pixarStyleModel_v10</option>
+		<option value="revAnimated_v122">revAnimated_v122</option>
+	</select>-->
+
+	<div class="input-group ">
+		<ul class="model-gallery">
+			<li><label><img src="/asset/img/models/sd-v1-5."/><br/><input class="form-check-input" type="radio" name="frmmodel" value="sd-v1-5"><br/>sd-v1-5</label></li>
+			<li><label><img src="/asset/img/models/fruitFusion.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="fruitFusion_ver1OFR2"><br/>fruitFusion</label></li>
+			<li><label><img src="/asset/img/models/chilloutmix.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="chilloutmix_NiPrunedFp32Fix"><br/>chilloutmix</label></li>
+			<li><label><img src="/asset/img/models/gravyMixPhotorealism.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="gravyMixPhotorealism_v3clean"><br/>gravyMixPhotorealism</label></li>
+			<li><label><img src="/asset/img/models/Guofeng3.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="Guofeng3_v33"><br/>Guofeng3_v33</label></li>
+			<li><label><img src="/asset/img/models/level4.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="level4_v50BakedVAEFp16"><br/>level4</label></li>
+			<li><label><img src="/asset/img/models/pixarStyleModel.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="pixarStyleModel_v10"><br/>pixarStyle</label></li>
+			<li><label><img src="/asset/img/models/revAnimated.jpeg"/><br/><input class="form-check-input" type="radio" name="frmmodel" value="revAnimated_v122"><br/>revAnimated</label></li>
+		</ul>
+	</div>
+
+	
+
+
+
+</div>
+<div class="input-group mb-3">
+	<span class="input-group-text">Prompt</span>
+	<textarea class="form-control" aria-label="Prompt"  name='frmprompt' rows="5">
+		best quality, masterpiece, highres, 1girl,blush,(seductive smile:0.8),star-shaped pupils,red china hanfu,hair ornament,necklace, jewelry,Beautiful face,upon_body, tyndall effect,photorealistic, dark studio, rim lighting, two tone lighting,(high detailed skin:1.2), 8k uhd, dslr, soft lighting, high quality, volumetric lighting, candid, Photograph, high resolution, 4k, 8k, Bokeh,(small head)
+	</textarea>
+</div>
+
+<div class="input-group">
+	<span class="input-group-text">Negative</br>Prompt</span>
+	<textarea class="form-control" aria-label="Negative Prompt"  name='frmnegativeprompt' rows="6">
+		red eyes,Red eye circles,big head,nsfw,(((simple background))),monochrome ,lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, lowres, bad anatomy, bad hands, text, error, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, ugly,pregnant,vore,duplicate,morbid,mut ilated,tran nsexual, hermaphrodite,long neck,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,blurry,bad anatomy,bad proportions,malformed limbs,extra limbs,cloned face,disfigured,gross proportions, (((missing arms))),(((missing legs))), (((extra arms))),(((extra legs))),pubic hair, plump,bad legs,error legs,username,blurry,bad feet
+
+	</textarea>
+</div>
+
+<div class="input-group">
+	<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<?php echo $this->tag->close('form'); ?>
+

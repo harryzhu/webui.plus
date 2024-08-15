@@ -1,0 +1,20 @@
+<?php $this->partial("partials/header"); ?>
+<h2>Profile</h2>
+
+
+<p>
+    <label for="name">Name</label>
+    <?php echo $this->tag->inputText('name',$user['username']); ?>
+</p>
+
+<p>
+    <label for="name">E-Mail</label>
+    <?php echo $this->tag->inputText('email',$user['email']); ?>
+</p>
+
+<p>
+    <label for="name">API Key</label>
+    <?php echo $this->tag->inputText('apikey',$user['apikey']); ?>
+</p>
+
+

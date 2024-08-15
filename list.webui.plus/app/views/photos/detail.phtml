@@ -1,0 +1,79 @@
+
+<?php
+global $_G;
+echo getPhotoDetail($photo);
+?>
+
+<?php 
+if(!empty($_G['me']) && !empty($photo) && $_G['me']['is_admin']==1): 
+
+    ?>
+<div class="row">
+    <div class="col-xl-12">
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                MORE &bull;&bull;&bull;
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <?php
+            
+
+            if($photo["is_public"] == 1){
+                echo '<a href="/admin/unpublish/'.$photo["_id"].'">Mark it Unpublic</a>';
+            }else{
+                echo '<a href="/admin/publish/'.$photo["_id"].'">Mark it Public</a>';
+            }
+
+            echo ' | ';
+
+            if($photo["is_member"] == 1){
+                echo '<a href="/admin/unmember/'.$photo["_id"].'">Mark it Unmember</a>';
+            }else{
+                echo '<a href="/admin/member/'.$photo["_id"].'">Mark it member</a>';
+            }
+
+            echo ' | ';
+
+            if($photo["is_private"] == 1){
+                echo '<a href="/admin/unprivate/'.$photo["_id"].'">Mark it Unprivate</a>';
+            }else{
+                echo '<a href="/admin/private/'.$photo["_id"].'">Mark it Private</a>';
+            }
+
+            echo ' | ';
+
+            if($photo["is_adult"] == 1){
+                echo '<a href="/admin/unadult/'.$photo["_id"].'">Mark it unAdult</a>';
+            }else{
+                echo '<a href="/admin/adult/'.$photo["_id"].'">Mark it Adult</a>';
+            }
+
+
+            echo ' | ';
+
+            if(!empty($photo["model"]) && !empty($photo["username"]) && !empty($photo["_id"]) ){
+                echo '<a href="/admin/delete/'.$photo["model"].'/'. $photo["username"] .'/'.$photo["_id"].'">Delete</a>';
+
+
+                
+            }
+            ?>
+
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+<?php endif ?>
