@@ -114,9 +114,6 @@ public function indexAction()
         echo "error: image data could not be nil";
         return False;
     }
-print_r($this->request->getHeaders());
-echo "----";
-    return True;
 
 // meta        
     $meta_post = $raw_post;
