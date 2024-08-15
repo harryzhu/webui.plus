@@ -114,7 +114,7 @@ public function indexAction()
         echo "error: image data could not be nil";
         return False;
     }
-echo strlen($raw_post);
+print_r($this->request->getHeaders());
 echo "----";
     return True;
 
