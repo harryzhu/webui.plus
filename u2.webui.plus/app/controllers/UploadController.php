@@ -142,7 +142,7 @@ public function indexAction()
     $user_upload_current = 0;
     $user_upload_current_file = join("/", array($user_data_dir,"upload_current.txt"));
     if(file_exists($user_upload_current_file)){
-        $user_upload_current = (int)file_get_contents($user_upload_current);
+        $user_upload_current = (int)file_get_contents($user_upload_current_file);
         if(empty($user_upload_current)){
             $user_upload_current = 1;
         }
