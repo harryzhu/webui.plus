@@ -12,9 +12,9 @@ class UploadController extends Controller
     public $mongo_client;
 
     public function initialize(){
-        $account_id         = "5b868241564dd8e989aac222a42c6e52";
-        $access_key_id      = "24dbd281e418a21c5d9769dd2dc0758b";
-        $access_key_secret  = "639c3343f0616f9bb71e6aae55e4298c285196a8b8f38f740ecfd26d0fc5c8f4";
+        $account_id         = R2_ACCOUNT_ID;
+        $access_key_id      = R2_ACCESS_KEY_ID;
+        $access_key_secret  = R2_ACCESS_KEY_SECRET;
 
         $credentials = new Aws\Credentials\Credentials($access_key_id, $access_key_secret);
 
@@ -27,7 +27,7 @@ class UploadController extends Controller
 
         $this->s3_client = new Aws\S3\S3Client($options);
 
-        $this->mongo_client = new MongoDB\Client('mongodb://dbrw01:ABC_123@mgemma.webui.plus:27017/?authMechanism=SCRAM-SHA-1&authSource=StableDiffusion');
+        $this->mongo_client = new MongoDB\Client(ENDPOINT);
     }
 
     public function resizeImage($imgdata,$w=256,$h=0){
