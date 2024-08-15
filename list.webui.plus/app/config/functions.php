@@ -114,14 +114,17 @@ function getPhotoDetail($photo=array()){
 		$li .= '<li>Public:<span class="runparam" contenteditable="true">'.$photo->is_public."</span></li>";
 		$li .= '<li>Member:<span class="runparam" contenteditable="true">'.$photo->is_member."</span></li>";
 		$li .= '<li>Private:<span class="runparam" contenteditable="true">'.$photo->is_private."</span></li>";
-		$devices = $photo->devices;
-		$arr_devices = json_decode($devices, True);
-		if(!empty($arr_devices['gpus'])){
-		foreach($arr_devices['gpus'] as $gpu){
-		$g_str = $gpu['name'].'[mem:'.$gpu['memory'].',driver:'.$gpu['driver'].']';
-		$li .= '<li>GPU:<span class="runparam" contenteditable="true">'.$g_str."</span></li>";
+		if(!empty($photo->devices)){
+			$devices = $photo->devices;
+			$arr_devices = json_decode($devices, True);
+			if(!empty($arr_devices['gpus'])){
+				foreach($arr_devices['gpus'] as $gpu){
+					$g_str = $gpu['name'].'[mem:'.$gpu['memory'].',driver:'.$gpu['driver'].']';
+					$li .= '<li>GPU:<span class="runparam" contenteditable="true">'.$g_str."</span></li>";
+				}
+			}
 		}
-		}
+		
 
 		$li .= '</ul></td></tr></table>';
 
