@@ -114,6 +114,9 @@ public function indexAction()
         echo "error: image data could not be nil";
         return False;
     }
+echo strlen($raw_post);
+echo "----";
+    return True;
 
 // meta        
     $meta_post = $raw_post;
