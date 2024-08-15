@@ -135,7 +135,7 @@ public function indexAction()
     }
 
     $user_data_dir = path_join(U2_DATA_DIR,"user",$username);
-    if !is_dir($user_data_dir){
+    if(!is_dir($user_data_dir)){
         mkdir($user_data_dir);
     }
     $user_upload_limit = 100;
