@@ -134,13 +134,13 @@ public function indexAction()
         return False;
     }
 
-    $user_data_dir = path_join(U2_DATA_DIR,"user",$username);
+    $user_data_dir = join("/", array(rtrim(U2_DATA_DIR,"/"),"user",$username));
     if(!is_dir($user_data_dir)){
         mkdir($user_data_dir);
     }
     $user_upload_limit = 100;
     $user_upload_current = 0;
-    $user_upload_current_file = path_join($user_data_dir,"upload_current.txt");
+    $user_upload_current_file = join("/", array($user_data_dir,"upload_current.txt"));
     if(file_exists($user_upload_current_file)){
         $user_upload_current = (int)file_get_contents($user_upload_current);
     }else{
