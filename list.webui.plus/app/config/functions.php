@@ -79,8 +79,8 @@ function getPhotoList($photos=array()){
 				continue;
 			}
 		}
-		$img_url = strtolower('https://r2.webui.plus/thumb/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.jpg');
-		$img_src_url = strtolower('https://r2.webui.plus/image/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
+		$img_url = strtolower('https://r2static.webui.plus/thumb/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.jpg');
+		$img_src_url = strtolower('https://r2static.webui.plus/image/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
 		$details_url = strtolower('/photos/detail/'.$photo['_id']);
 		$photo_class = 'public-'.$photo['is_public'].' member-'.$photo['is_member'].' private-'.$photo['is_private'].' adult-'.get_attr($photo,'is_adult',0);
 		$li .= '<div class="image-box '.$photo_class.'"><a href="'.$details_url.'" target="_blank"><img src="'.$img_url.'" /></a></div>';
@@ -97,7 +97,7 @@ function getPhotoDetail($photo=array()){
 	$li = '';
 	if(!empty($photo)){
 
-		$photo_src_url = strtolower('https://r2.webui.plus/image/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
+		$photo_src_url = strtolower('https://r2static.webui.plus/image/'.$photo['model'].'/'.$photo['username'].'/'.$photo['_id'].'.png');
 
 		$li .= '<table><tr>';
 
