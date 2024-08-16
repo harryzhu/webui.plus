@@ -31,7 +31,7 @@ class BaseController extends Controller
 		global $coll_sandbox;
 
 		$this->sandbox = $coll_sandbox;
-		$_G["page_size"] = 48;
+		$_G["page_size"] = 20;
 
 		$this->filter=array("is_public"=>1);
 		$this->options=array("limit"=>$_G["page_size"]);
