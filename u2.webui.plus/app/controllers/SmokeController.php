@@ -21,5 +21,11 @@ class SmokeController extends Controller
     }
     $raw_post = $this->request->getPost();
     print_r($raw_post);
+    if($this->request->hasFiles()){
+        foreach ($this->request->getUploadedFiles() as $file) {
+            echo $file->getName().":".$file->getSize();
+            $file->moveTo("/home/tmp/test/1.jpg");
+        }
+    }
     }
 }
