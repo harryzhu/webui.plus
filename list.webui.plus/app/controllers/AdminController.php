@@ -18,7 +18,7 @@ class AdminController extends BaseController
 	{
 		
 		$this->options['sort'] = array('utc_create' => -1);
-		$this->filter=array("is_public"=>0);
+		$this->filter=array("is_public"=>0,"username"=>"__testman__");
 
 		$photos = $this->sandbox->find($this->filter,$this->options);
 
