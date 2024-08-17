@@ -17,9 +17,9 @@ class AdminController extends BaseController
 	public function indexAction()
 	{
 		
-		$this->options['sort'] = array('utc_create' => -1);
-		$this->filter["is_public"]=0;
-		$this->filter["username"]="__testman__";
+		$this->sandbox->options['sort'] = array('utc_create' => -1);
+		$this->sandbox->filter["is_public"]=0;
+		$this->sandbox->filter["username"]="__testman__";
 
 		$photos = $this->sandbox->find();
 
