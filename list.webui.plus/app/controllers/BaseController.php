@@ -81,4 +81,10 @@ class BaseController extends Controller
 		}
 
 	}
+
+	protected function getServerStatus(){
+		$s = new ServerStatus();
+		$this->view->disable();
+		print_r($s->getConnections());
+	}
 }
