@@ -11,13 +11,6 @@ try {
     echo "连接数据库失败: " . $e->getMessage();
 }
 
-
-
-		$sql = "show status like '%:item:%'";
-		$stmt = $this->config->db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-		$stmt->execute(array("item" => "Threads_connected"));
-		$rows = $stmt->fetchAll();
-		return $rows;
 	
 $query = "show status;";
 $stmt = $pdo->prepare($query);
