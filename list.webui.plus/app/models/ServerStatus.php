@@ -14,7 +14,7 @@ class ServerStatus extends Model{
 $stmt = $this->db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array(':item' => "Threads_connected");
 $rows = $stmt->fetchAll();
-print_r($rows);
+return $rows;
 	}
 
 
