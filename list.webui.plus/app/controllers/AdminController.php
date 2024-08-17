@@ -17,7 +17,7 @@ class AdminController extends BaseController
 	public function indexAction()
 	{
 		
-		$this->options['sort'] = array('ts_upload' => -1);
+		$this->options['sort'] = array('ts_upload' => 1);
 
 		$photos = $this->sandbox->find($this->filter,$this->options);
 
