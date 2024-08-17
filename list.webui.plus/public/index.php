@@ -13,9 +13,6 @@ use Phalcon\Flash\Session as FlashSession;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Mvc\View;
 
-global $timer_start;
-$timer_start = time();
-
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
