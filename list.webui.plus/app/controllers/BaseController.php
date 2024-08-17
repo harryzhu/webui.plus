@@ -49,7 +49,7 @@ class BaseController extends Controller
 		$_G["current_page"] = empty($_GET["p"])?1:$_GET["p"];
 		$_G["current_uri"] =$this->request->getURI();
 
-$this->getServerStatus();
+//$this->getServerStatus();
 	}
 
 	protected function userOnline(){
