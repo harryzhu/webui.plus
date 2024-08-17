@@ -35,6 +35,10 @@
 		<div class="row">
 			<?php $this->partial("partials/footer"); ?>
 		</div>
+		<?php 
+		global $timer_start;
+		echo "time: ".(time() - $timer_start) ."sec";
+		?>
 	</div>
 </body>
 </html>
