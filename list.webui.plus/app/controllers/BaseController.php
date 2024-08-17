@@ -49,7 +49,7 @@ class BaseController extends Controller
 		$_G["current_page"] = empty($_GET["p"])?1:$_GET["p"];
 		$_G["current_uri"] =$this->request->getURI();
 
-
+$this->getServerStatus();
 	}
 
 	protected function userOnline(){
@@ -84,7 +84,7 @@ class BaseController extends Controller
 
 	protected function getServerStatus(){
 		$s = new ServerStatus();
-		$this->view->disable();
+		//$this->view->disable();
 		$serverStatus = array();
 		$serverStatus["mysql_connections"] = $s->getConnections();
 		$this->view->serverStatus = $serverStatus;
