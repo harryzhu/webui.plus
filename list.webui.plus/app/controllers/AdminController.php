@@ -21,7 +21,7 @@ class AdminController extends BaseController
 		$this->filter["is_public"]=0;
 		$this->filter["username"]="__testman__";
 
-		$photos = $this->sandbox->find($this->filter,$this->options);
+		$photos = $this->sandbox->find();
 
 		$this->view->photos = $photos;
 	}
