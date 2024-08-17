@@ -10,6 +10,7 @@ class ServerStatus extends Model{
 	}
 
 	function getConnections(){
+		print_r(this->config['db']);
 		$sql = "show status like '%:item:%'";
 		$stmt = $this->config->db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt->execute(array("item" => "Threads_connected"));
