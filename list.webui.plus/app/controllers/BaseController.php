@@ -82,12 +82,5 @@ class BaseController extends Controller
 
 	}
 
-	protected function getServerStatus(){
-		$s = new ServerStatus();
-		//$this->view->disable();
-		$serverStatus = array();
-		$serverStatus["mysql_connections"] = $s->getConnections();
-		$this->view->serverStatus = $serverStatus;
-		return $serverStatus;
-	}
+
 }
