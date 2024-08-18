@@ -6,27 +6,24 @@ use Phalcon\Http\Response;
 
 class BaseController extends Controller
 {
+	public $data;
 	public function initialize(){
-		
+		$this->data = array();
 		
 	}
 
 
-public function afterExecuteRoute(Dispatcher $dispatcher)
+public function jsonOut()
     {
         $this->view->disable();
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
 
-        /** @var array $data */
-        $data = $dispatcher->getReturnedValue();
-        $dispatcher->setReturnedValue([]);
 
-        if (true !== $this->response->isSent()) {
-            $this->response->setJsonContent($data);
+        $this->response->setJsonContent($this->data);
 
-            return $this->response->send();
-        }
+       $this->response->send();
+        
     }
 
 }
