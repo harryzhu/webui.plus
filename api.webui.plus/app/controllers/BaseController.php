@@ -14,8 +14,7 @@ class BaseController extends Controller
 			View::LEVEL_NO_RENDER
 		);
 
-		$this->response->setContentType('application/json', 'UTF-8');
-		$this->response->setHeader('Cache-Control', 'no-store');
+		
 
 		$this->message = array("status_code"=>200,"error"=>"","data"=>array());
 		
@@ -25,9 +24,13 @@ class BaseController extends Controller
 	public function afterExecuteRoute()
 	{
 		       
-		//$response = new Response();
-		$this->response->setStatusCode($this->message["status_code"], 'OK');
-		$this->response->setJsonContent($this->message)->send();
+		$response = new Response();
+		
+		$response->setStatusCode($this->message["status_code"], 'OK');
+		$response->setContentType('application/json', 'UTF-8');
+		$response->setHeader('Cache-Control', 'no-store');
+
+		$response->setJsonContent($this->message)->send();
 
 
 
