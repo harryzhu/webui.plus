@@ -10,7 +10,7 @@ class IndexController extends BaseController
 
 	public function indexAction()
 	{
-		$this->view->disable();
+		//$this->view->disable();
 		$this->jsonOut();
 	}
 }
