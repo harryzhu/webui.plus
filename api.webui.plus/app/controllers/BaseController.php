@@ -14,17 +14,16 @@ class BaseController extends Controller
 	}
 
 
-public function afterExecuteRoute()
-    {
-        $this->view->disable();
-        $this->response->setContentType('application/json', 'UTF-8');
-        $this->response->setHeader('Cache-Control', 'no-store');
+	public function afterExecuteRoute($dispatcher){
+		$this->view->disable();
+		$this->response->setContentType('application/json', 'UTF-8');
+		$this->response->setHeader('Cache-Control', 'no-store');
 
-        if (true !== $this->response->isSent()) {
-            $this->response->setJsonContent($this->data);
+		if (true !== $this->response->isSent()) {
+			$this->response->setJsonContent($this->data);
 
-            return $this->response->send();
-        }
-    }
+			return $this->response->send();
+		}
+	}
 
 }
