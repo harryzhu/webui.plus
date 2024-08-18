@@ -12,6 +12,6 @@ class IndexController extends BaseController
 	{
 		$this->message["error"]="errrr";
 		$this->message["data"]=array();
-		$this->jsonOut();
+		//$this->jsonOut();
 	}
 }
