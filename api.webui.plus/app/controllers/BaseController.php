@@ -1,6 +1,6 @@
 <?php
 require_once(BASE_PATH.'/app/library/vendor/autoload.php');
-
+use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 
@@ -12,7 +12,7 @@ class BaseController extends Controller
 	}
 
 
-public function afterExecuteRoute($dispatcher)
+public function afterExecuteRoute(Dispatcher $dispatcher)
     {
         $this->view->disable();
         $this->response->setContentType('application/json', 'UTF-8');
