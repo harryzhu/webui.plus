@@ -26,7 +26,7 @@ class BaseController extends Controller
 	{
 		       
 		$response = new Response();
-		$response->setStatusCode(this->message["status_code"], 'OK');
+		$response->setStatusCode($this->message["status_code"], 'OK');
 		$response->setJsonContent($this->message)->send();
 
 
