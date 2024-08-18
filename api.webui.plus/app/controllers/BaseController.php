@@ -25,9 +25,9 @@ class BaseController extends Controller
 	public function afterExecuteRoute()
 	{
 		       
-		$response = new Response();
-		$response->setStatusCode($this->message["status_code"], 'OK');
-		$response->setJsonContent($this->message)->send();
+		//$response = new Response();
+		$this->response->setStatusCode($this->message["status_code"], 'OK');
+		$this->response->setJsonContent($this->message)->send();
 
 
 
