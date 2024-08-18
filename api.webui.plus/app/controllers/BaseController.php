@@ -26,9 +26,10 @@ public function jsonOut()
         
 $this->view->disable();
 
-        $this->response->setJsonContent($this->data);
+$response = new Response();
+$response->setJsonContent($this->data, JSON_PRETTY_PRINT)->send();
 
-       return $this->response;
+
         
     }
 
