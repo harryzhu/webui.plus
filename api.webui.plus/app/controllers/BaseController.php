@@ -15,7 +15,7 @@ class BaseController extends Controller
         $this->response->setStatusCode(200, 'OK');
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
-        
+
 		$this->data = array();
 		
 	}
@@ -28,7 +28,7 @@ public function jsonOut()
 
         $this->response->setJsonContent($this->data);
 
-       $this->response->send();
+       return $this->response;
         
     }
 
