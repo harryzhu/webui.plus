@@ -8,7 +8,7 @@ use Phalcon\Http\Response;
 class BaseController extends Controller
 {
 	public $message;
-	
+
 	public function initialize(){
 		$this->view->setRenderLevel(
 			View::LEVEL_NO_RENDER
@@ -24,8 +24,9 @@ class BaseController extends Controller
 
 	public function afterExecuteRoute()
 	{
-		$this->response->setStatusCode(this->message["status_code"], 'OK');       
+		       
 		$response = new Response();
+		$response->setStatusCode(this->message["status_code"], 'OK');
 		$response->setJsonContent($this->message)->send();
 
 
