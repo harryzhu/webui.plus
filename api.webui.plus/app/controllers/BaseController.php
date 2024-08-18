@@ -24,7 +24,7 @@ class BaseController extends Controller
 public function jsonOut()
     {
         
-
+$this->view->disable();
 
         $this->response->setJsonContent($this->data);
 
