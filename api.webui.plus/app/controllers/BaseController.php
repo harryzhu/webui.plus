@@ -21,19 +21,19 @@ class BaseController extends Controller
 	}
 
 
-	public function afterExecuteRoute()
-	{
-		       
-		$response = new Response();
+	public function afterExecuteRoute(): bool {
 		
+		$response = new Response();
+
 		$response->setStatusCode($this->message["status_code"], 'OK');
 		$response->setContentType('application/json', 'UTF-8');
 		$response->setHeader('Cache-Control', 'no-store');
 
-		$response->setJsonContent($this->message)->send();
+		$response->setJsonContent($this->message);
+		$response->send();
 
 
-
+		return True;
 	}
 
 }
