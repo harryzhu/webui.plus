@@ -7,25 +7,25 @@ use Phalcon\Http\Response;
 
 class BaseController extends Controller
 {
-	public $data;
+	public $message;
 	public function initialize(){
 		$this->view->setRenderLevel(
             View::LEVEL_NO_RENDER
         );
-        $this->response->setStatusCode(200, 'OK');
+        
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
 
-		$this->data = array("status_code"=>"200","error"=>"");
+		$this->message = array("status_code"=>"200","error"=>"");
 		
 	}
 
 
 public function jsonOut()
     {
-        
+ $this->response->setStatusCode(200, 'OK');       
 $response = new Response();
-$response->setJsonContent($this->data, JSON_PRETTY_PRINT)->send();
+$response->setJsonContent($this->message)->send();
 
 
         

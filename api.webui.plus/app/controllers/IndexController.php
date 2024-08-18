@@ -10,8 +10,8 @@ class IndexController extends BaseController
 
 	public function indexAction()
 	{
-		$this->data["error"]="errrr";
-		$this->data["data"]=array();
+		$this->message["error"]="errrr";
+		$this->message["data"]=array();
 		$this->jsonOut();
 	}
 }
