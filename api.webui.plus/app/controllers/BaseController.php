@@ -16,7 +16,7 @@ class BaseController extends Controller
         $this->response->setContentType('application/json', 'UTF-8');
         $this->response->setHeader('Cache-Control', 'no-store');
 
-		$this->data = array();
+		$this->data = array("status_code"=>"200","error"=>"");
 		
 	}
 
