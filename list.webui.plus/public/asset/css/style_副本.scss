@@ -1,18 +1,9 @@
 html,body{
-	background-color: #f2f2f5;
+	background-color: #f2f2f2;
 	color: #333;
 	font-size: 14px;
 }
 
-nav {
-background-color: #f2f2f5!important;
-border-bottom: 1px solid #E6E6EA;
-padding-bottom: 5px;
-height: 60px;	
-ul.navbar-nav li.nav-item {
-	border:none;
-}
-}
 
 
 a{
@@ -32,7 +23,7 @@ ul{
 
 ul li {
 	padding: 5px;
-	border-bottom: 1px solid #E6E6EA;
+	border-bottom: 1px solid #dcdcde;
 }
 
 li.active{
@@ -58,8 +49,8 @@ li.active{
 	/*column-width: 230px;*/
 	column-gap: 20px;
 	overflow: hidden;
-	background-color: #f2f2f5;
-	color: #fefeff;
+	/*background-color: #080B16;
+	color: #fefeff;*/
 	padding-left: 10px;
 
 	img{
@@ -137,11 +128,8 @@ textarea.ta-big{
 
 .col-model,
 .col-user{
-	background-color: #fbfbfd;
-	margin-top: 10px;
-	border: 1px solid #E6E6EA;
+	background-color: #fff;
 	min-height: 100%;
-	overflow: hidden;
 }
 
 .photos-detail .col-image{
@@ -158,9 +146,8 @@ h3{
 
 ul.model-gallery{
 	border: 0px solid #ccc;
-	margin:0;
+	margin: 0;
 	padding:0;
-	border-raidus: 10px;
 	list-style: none;
 	display: block;
 	width: 100%;
