@@ -33,7 +33,9 @@
 
 		<div class="row">
 			<?php $this->partial("partials/footer"); ?>
+			<?php global $_G; echo "<hr/> running time: ".time() - $_G['time_start'] ." seconds";?>
 		</div>
 	</div>
+
 </body>
 </html>

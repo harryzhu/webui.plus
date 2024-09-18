@@ -10,6 +10,19 @@ function mongoOID($oid=""){
 	return new MongoDB\BSON\ObjectId($oid);
 }
 
+function set_cache($key,$data){
+	$cfile = MONGO_CACHE_DIR."/".$key;
+	file_put_contents($cfile, json_encode($data));
+}
+
+function get_cache($key){
+	$cfile = MONGO_CACHE_DIR."/".$key;
+	if(file_exists($cfile) && (time() - filemtime($cfile) < 120)){
+		return json_decode(file_get_contents($key));
+	}
+	return false;
+}
+
 class MongoWebUI 
 {
 	public $client;
@@ -32,7 +45,8 @@ class MongoWebUI
 		);
 
 		$this->default_options = array(
-			'sort'=>array('ts_upload'=>-1)
+			'sort'=>array('ts_upload'=>-1),
+			'allowDiskUse'=>true,
 		);
 
 		$this->filter = $this->default_filter;
@@ -75,14 +89,11 @@ class MongoWebUI
 	}
 
 	public function find(){
-
-		//$this->collection->updateMany(array('is_private'=>'000'),array('$set'=>array('is_private'=>0)));
-
-		return $this->collection->find($this->filter,$this->options);
+		return $this->collection->find($this->filter,$this->options);		
 	}
 
 	public function findOne(){
-		return $this->collection->findOne($this->filter,$this->options);
+		$result = $this->collection->findOne($this->filter,$this->options);
 	}
 
 	public function insertOne($doc=array()){
