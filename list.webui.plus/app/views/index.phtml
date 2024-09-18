@@ -33,7 +33,7 @@
 
 		<div class="row">
 			<?php $this->partial("partials/footer"); ?>
-			<?php global $_G; echo "<hr/> running time: ".time() - $_G['time_start'] ." seconds";?>
+			<?php global $_G; echo "<hr/> running time: ".round(microtime(true) - $_G['time_start'],2) ." ms";?>
 		</div>
 	</div>
 

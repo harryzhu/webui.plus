@@ -21,7 +21,7 @@ require_once(BASE_PATH . "/../config/settings.global.php");
 
 global $_G;
 $_G = array();
-$_G["time_start"] = time();
+$_G["time_start"] = microtime(true);
 
 require_once(APP_PATH . '/config/config.php');
 require_once(APP_PATH . '/config/loader.php');
