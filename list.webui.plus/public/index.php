@@ -16,12 +16,13 @@ use Phalcon\Mvc\View;
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
-
-require_once(BASE_PATH . "/../config/settings.global.php");
-
 global $_G;
 $_G = array();
 $_G["time_start"] = microtime(true);
+
+require_once(BASE_PATH . "/../config/settings.global.php");
+
+
 
 require_once(APP_PATH . '/config/config.php');
 require_once(APP_PATH . '/config/loader.php');
